@@ -1,58 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einführung Javascript</title>
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Einführung Javascript</title>
-  <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
 
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <body>
+    <main>
+      <h1>Einführung in Javascript</h1>
+      <section>
+        <h3>Benutzer informieren</h3>
+        <div class="content">
+          Man kann dem Benutzer eine Nachricht schreiben, wenn ein Knopf
+          gedrückt wird.
+        </div>
+        <div class="center">
+          <button onclick="sayHello()">Say Hello!!!</button>
+        </div>
+      </section>
+      <section>
+        <h3>Hintergrund ändern</h3>
+        <div class="content">
+          Mann kann die Hintergrundfarbe der Webseite auf Knopfdruck verstellen.
+        </div>
+        <div class="center">
+          <button onclick="changeBackground()">Hintergrund ändern</button>
+        </div>
+      </section>
 
-</head>
+      <section>
+        <h3>Aufgabe 7</h3>
+        <div class="content">
+          <input type="text" id="input" />
+          <pre id="output">Hier wird Text angehängt...</pre>
+        </div>
+        <div class="center">
+          <button onclick="writeText()">Text anhängen</button>
+        </div>
+      </section>
 
-<body>
-  <main>
+      <section>
+        <h3 id="range-target">On Change</h3>
+        <div class="content">
+          Man kann auch den Hintergrund von einem Titel dynamisch anpassen.
+        </div>
+        <div class="flex">
+          <label for="range">Alpha:
+            <input type="range" id="range" oninput="updateRange()" />
+          </label>
+          <label for="range">Rot:
+            <input type="range" id="red" oninput="updateRange()" />
+          </label>
+          <label for="range">Grün:
+            <input type="range" id="green" oninput="updateRange()" />
+          </label>
+          <label for="range">Blau:
+            <input type="range" id="blue" oninput="updateRange()" />
+          </label>
+        </div>
+      </section>
+    </main>
 
-    <h1>Einführung in Javascript</h1>
-    <section>
-      <h3>Benutzer informieren</h3>
-      <div class="content">
-        Man kann dem Benutzer eine Nachricht schreiben, wenn ein Knopf
-        gedrückt wird.
-      </div>
-      <div class="center">
-        <button onclick="sayHello()">Say Hello!!!</button>
-      </div>
-    </section>
-
-    <section>
-      <h3>Hintergrund ändern</h3>
-      <div class="content">
-        Mann kann die Hintergrundfarbe der Webseite auf Knopfdruck verstellen.
-      </div>
-      <div class="center">
-        <button onclick="changeBackground()">Hintergrund ändern</button>
-      </div>
-    </section>
-
-    <section>
-      <h3>Aufgabe 3</h3>
-      <div class="content">
-        <p id="to-delete">Hier steht Text der gelöscht werden soll...</p>
-      </div>
-      <div class="center">
-        <button onclick="changeBackground()">Hintergrund ändern</button>
-      </div>
-    </section>
-
-  </main>
-
-
-  <script type="module" src="tests/run.js"></script>
-
-</body>
-
+    <script type="module" src="tests/run.js"></script>
+  </body>
 </html>
